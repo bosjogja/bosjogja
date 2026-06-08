@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nomor Cantik Premium</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --bg2: #111827;
+      --card: rgba(255,255,255,0.06);
+      --card2: rgba(255,255,255,0.09);
+      --text: #f8fafc;
+      --muted: #b6c2d1;
+      --line: rgba(255,255,255,0.10);
+      --gold: #facc15;
+      --gold2: #f59e0b;
+      --green: #34d399;
+      --blue: #60a5fa;
+      --shadow: 0 20px 60px rgba(0,0,0,0.45);
+      --radius: 24px;
+      --radius2: 18px;
+      --max: 1180px;
+    }
+
+    * { 
+      box-sizing: border-box; 
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background:
+      radial-gradient(circle at top right,
+        rgba(21, 170, 250, 0.446),
+        transparent 30%),
+      radial-gradient(circle at bottom left,
+        rgba(11, 23, 245, 0.066),
+        transparent 35%),
+      linear-gradient(
+        180deg,
+        #111827 0%,
+        #0b0f14 100%
+      );
+      color: var(--text);
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .container {
+      width: min(100% - 32px, var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: rgba(11,15,20,0.75);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+    }
+
+    .brand-badge {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(250,204,21,0.25), rgba(245,158,11,0.15));
+      border: 1px solid rgba(250,204,21,0.2);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+      display: grid;
+      place-items: center;
+     }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav a:hover { 
+      color: cyan;
+      text-shadow: 5px 5px 9px rgb(0, 38, 255);
+      text-decoration: underline;
+    }
+
+    .hero {
+      padding: 58px 0 34px;
+    }
+    
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: flex-start;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      color: #fff;
+      background: linear-gradient(135deg, #6a5af9, #1d9bf0);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+     } 
+
+    .pill::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -120%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(
+       120deg,
+       transparent,
+       rgba(255,255,255,0.35),
+       transparent
+      );
+      transform: skewX(-20deg);
+      animation: shine 2.8s infinite;
+    }
+
+    @keyframes shine {
+     0% { left: -120%; }
+     100% { left: 220%; }
+    }
+
+    h1 {
+      margin: 18px 0 14px;
+      font-size: clamp(2.3rem, 4vw, 4.4rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .lead {
+      margin: 0;
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.9;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .btn {
+      appearance: none;
+      border: none;
+      cursor: pointer;
+      border-radius: 18px;
+      padding: 14px 20px;
+      font-weight: 700;
+      font-size: 14px;
+      transition: 0.25s ease;
+    }
+
+    .btn-primary,
+    .btn-secondary,
+    .maps-btn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 10px 16px;
+      border-radius: 15px;
+      background: linear-gradient(135deg,#facc15,#f59e0b);
+      color: #111 !important;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      position: relative;
+      overflow: hidden;
+      transition: all .35s ease;
+    }
+
+    .btn-primary::before,
+    .btn-secondary::before,
+    .maps-btn::before{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -120%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255,255,255,.4),
+          transparent
+      );
+      transform: skewX(-20deg);
+      transition: .6s;
+    }
+
+    .btn-primary:hover,
+    .btn-secondary:hover,
+    .maps-btn:hover{
+      transform: translateY(-2px);
+      box-shadow:
+          0 0 12px rgba(250,204,21,.35),
+          0 0 25px rgba(250,204,21,.2);
+      filter: brightness(1.08);
+    }
+
+    .btn-primary:hover::before,
+    .btn-secondary:hover::before,
+    .maps-btn:hover::before{
+      left: 150%;
+    }
+
+    .maps-btn img{
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .stat {
+      position: relative;
+      padding: 16px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+      transition: 0.3s ease;
+      overflow: hidden;
+     }
+
+    .stat .value {
+      font-size: 24px;
+      font-weight: 800;
+      color: #fde68a;
+      line-height: 1;
+    }
+
+    .stat .label {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .stat:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(29,155,240,0.25);
+    }
+
+    .featured {
+      padding: 24px;
+      border-radius: 30px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .featured-head {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .featured-title { margin: 0; font-size: 24px; }
+    .featured-sub { margin: 6px 0 0; color: var(--muted); font-size: 14px; }
+    .highlight-box {
+      margin-top: 22px;
+      padding: 22px;
+      border-radius: 26px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--line);
+    }
+
+    .number-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .icon-box {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: rgba(250,204,21,0.12);
+      color: #fcd34d;
+      font-size: 22px;
+      flex: 0 0 auto;
+    }
+
+    .number-text .label {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .number-text .number {
+      font-size: clamp(1.4rem, 2vw, 2rem);
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      margin-top: 4px;
+      word-break: break-all;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid var(--line);
+      color: #dbeafe;
+      font-size: 12px;
+      display: inline-block;
+    }
+
+    .price-row {
+      margin-top: 20px;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .price strong {
+      display: block;
+      font-size: 28px;
+      color: #fde68a;
+    }
+
+    .price .price-label {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .section {
+      padding: 44px 0;
+    }
+
+    .section-head {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+    
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(1.7rem, 2.5vw, 2.5rem);
+    }
+
+    .section-head p {
+      margin: 8px 0 0;
+      color: var(--muted);
+    }
+
+    .searchbar {
+      position: relative;
+      width: min(100%, 360px);
+    }
+
+    .searchbar input {
+      width: 100%;
+      padding: 14px 16px 14px 44px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      outline: none;
+      font: inherit;
+    }
+
+    .searchbar input:focus {
+      border-color: rgba(29, 156, 240, 0.789);
+      box-shadow: 0 0 0 3px rgba(29, 156, 240, 0.515),
+              0 10px 25px rgba(19, 157, 134, 0.488);
+      transform: translateY(-1px);
+    }
+
+    .searchbar input:hover {
+      border-color: rgb(54, 4, 253);
+    }
+
+    .searchbar input::placeholder { 
+      color: #7c8ba0; 
+    }
+    
+    .search-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #94a3b8;
+      font-size: 18px;
+      display: inline-block;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0 26px;
+    }
+
+    .filter-btn {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      padding: 10px 16px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      color: #111;
+      border-color: transparent;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      border-radius: 28px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      background: var(--card2);
+    }
+
+    .card-inner { 
+      padding: 22px; 
+    }
+
+    .card-top {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .card h3 {
+      margin: 14px 0 8px;
+      font-size: 26px;
+      letter-spacing: 0.06em;
+    }
+
+    .desc {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 14px;
+    }
+
+    .card .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .meta-tag {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid var(--line);
+      color: #dbeafe;
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      display: inline-block;
+    }
+
+    .card-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-top: 18px;
+      margin-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    .card-bottom .p {
+      color: var(--muted);
+      font-size: 12px;
+      margin: 0;
+    }
+
+    .card-bottom .pr {
+      margin: 4px 0 0;
+      font-size: 22px;
+      font-weight: 800;
+      color: #fde68a;
+    }
+
+    .panel {
+      padding: 26px;
+      border-radius: 28px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .panel h3 { margin: 0; font-size: 26px; }
+    .panel p { color: var(--muted); line-height: 1.9; }
+    .benefit-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .benefit {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(0,0,0,0.18);
+      border: 1px solid var(--line);
+      color: #e5e7eb;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .testimonial {
+      display: grid;
+      gap: 18px;
+    }
+
+    .testimonial-card{
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+     .user{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+     }
+
+     .avatar{
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #facc15, #f59e0b);
+      color: #111;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+     }
+
+     .name{
+      font-weight: 700;
+      font-size: 14px;
+     }
+
+    .stars{
+      font-size: 13px;
+      color: #facc15;
+     }
+
+    .quote{
+      background: rgba(255,255,255,0.05);
+      padding: 12px 14px;
+      border-radius: 12px;
+      font-size: 14px;
+      color: #e5e7eb;
+      line-height: 1.5;
+      border-left: 3px solid #00ff55;
+     }
+
+     .meta-info{
+      font-size: 12px;
+      color: var(--muted);
+     }
+
+    .gold{
+      color: #facc15;
+     }
+
+    .brand-badge img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+     }
+
+    .brand-title{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      font-size:18px;
+      font-weight:700;
+     }
+
+    .verified {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      background: #1d9bf0; 
+      border-radius: 50%;
+      margin-left: 2px;
+      box-shadow: 0 0 10px rgba(29,155,240,0.4);
+      animation: popIn 0.25s ease-out;
+      position: relative;
+     }
+
+    .verified-icon {
+      width: 12px;
+      height: 12px;
+     }
+
+    .verified::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #1d9bf0;
+      border-radius: 50%;
+      z-index: -1;
+      animation: pulse 1.8s infinite;
+      opacity: 0.6;
+     }
+
+     @keyframes pulse {
+      0% {
+       transform: scale(1);
+       opacity: 0.6;
+      }
+      70% {
+       transform: scale(1.8);
+       opacity: 0;
+      }
+      100% {
+       opacity: 0;
+        }
+      }
+
+    .footer {
+      background: #111729;
+      color: #fff;
+      padding: 30px 0;
+      margin-top: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .footer::before {
+      content: "";
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, #1d9bf0 0%, transparent 75%);
+      top: -200px;
+      right: -150px;
+      opacity: 0.2;
+     }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hidden { 
+      display: none !important; 
+    }
+
+    /* ====== LAYOUT BARU ====== */
+    .keunggulan-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .testi-faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .right-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .grid,
+      .testi-faq-grid {
+        grid-template-columns: 1fr;
+      }
+      .nav { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      .hero { padding-top: 34px; }
+      .stats { grid-template-columns: 1fr; }
+      .benefit-list { grid-template-columns: 1fr; }
+      .section-head { align-items: start; }
+      .card h3 { font-size: 22px; }
+      .price strong { font-size: 24px; }
+    }
+    
+    .faq-container{
+      width: 100%;
+      margin: 0;
+      font-family: inherit;
+      color: #fff;
+      background: #12141a;
+      padding: 22px;
+      border-radius: 28px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .faq-container h3{
+      font-size: 24px;
+      margin-bottom: 14px;
+    }
+
+    .faq-item{
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 6px 0;
+    }
+
+    .faq-question{
+      width: 100%;
+      background: none;
+      border: none;
+      color: white;
+      text-align: left;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 14px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-answer{
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0.85;
+      font-size: 14px;
+      line-height: 1.7;
+      transition: max-height 0.3s ease, opacity 0.3s ease;
+    }
+
+    .faq-item.active .faq-answer{
+      max-height: 200px;
+      opacity: 1;
+      padding-bottom: 12px;
+    }
+
+    .actions-right {
+      justify-content: flex-start;
+      flex-wrap: wrap;
+    }
+
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <div class="brand-badge">
+          <img src="logo.jpg" alt="Logo">
+        </div>
+        <div>
+          <div class="brand-title">
+            BOS JOGJA
+            <div class="verified">
+              <svg viewBox="0 0 24 24" class="verified-icon">
+                <path d="M20 6L9 17l-5-5" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          <div class="brand-subtitle">
+            Premium Number Store
+          </div>
+       </div>
+      </div>
+      <nav class="nav">
+        <a href="#katalog">Katalog</a>
+        <a href="#keunggulan">Keunggulan</a>
+        <a href="#testimoni">Testimoni</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="pill">✦ Nomor cantik premium untuk branding yang lebih meyakinkan</div>
+          <h1><strong class="gold">Nomor Cantik Premium </strong>untuk Branding yang Lebih Kuat</h1>
+          <p class="lead">
+            Temukan nomor pilihan dengan kombinasi angka unik, mudah diingat, dan berkesan. Cocok untuk bisnis, usaha, maupun penggunaan pribadi yang ingin tampil lebih profesional.
+          </p>
+
+          <div class="actions">
+            <a class="btn btn-primary" href="#katalog">Lihat Katalog</a>
+            <a class="btn btn-secondary" href="#testimoni">Lihat Testimoni</a>
+            <a href="https://maps.app.goo.gl/xqD6Gk148akZNUTG9" target="_blank" class="maps-btn">
+              <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Maps">Lokasi Kami
+            </a>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <div class="value">600+</div>
+              <div class="label">Nomor tersedia</div>
+            </div>
+            <div class="stat">
+              <div class="value">24 jam</div>
+              <div class="label">Respon cepat</div>
+            </div>
+            <div class="stat">
+              <div class="value">100%</div>
+              <div class="label">Bisa dicek keaslian</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="featured">
+          <div class="featured-head">
+            <div>
+              <h2 class="featured-title">Nomor unggulan hari ini</h2>
+              <p class="featured-sub">Pilihan paling menonjol untuk menarik perhatian pembeli.</p>
+            </div>
+            <div class="icon-box">★</div>
+          </div>
+
+          <div class="highlight-box">
+            <div class="number-row">
+              <div class="icon-box">☎</div>
+              <div class="number-text">
+                <div class="label">Nomor unggulan</div>
+                <div class="number">087 771 772 773</div>
+              </div>
+            </div>
+
+            <div class="tags">
+              <div class="tag">VIP</div>
+              <div class="tag">Langka</div>
+              <div class="tag">Branding</div>
+              <div class="tag">Ready transfer</div>
+            </div>
+
+            <div class="price-row">
+              <div class="price">
+                <div class="price-label">Harga</div>
+                <strong>Rp 15.000.000</strong>
+              </div>
+              <a class="btn btn-primary" href="https://wa.me/6283867787878?text=Halo%20admin,%20saya%20tertarik%20dengan%20Nomor%20087 771 772 773%20harga%20Rp%2015.000.000.%20Masih%20tersedia?" target="_blank" rel="noopener">Chat Sekarang</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="katalog">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p style="text-transform:uppercase;letter-spacing:.18em;font-size:12px;color:#fde68a;margin:0;">Katalog nomor</p>
+            <h2>Pilih nomor yang cocok untuk bisnis, reseller, atau koleksi.</h2>
+            <p>Cari nomor berdasarkan angka, kategori, atau deskripsi.</p>
+          </div>
+          <div class="searchbar">
+            <div class="search-icon">⌕</div>
+            <input id="searchInput" type="text" placeholder="Cari nomor..." />
+          </div>
+        </div>
+
+        <div class="filters" id="filterButtons">
+          <button class="filter-btn active" data-filter="Semua">Semua</button>
+          <button class="filter-btn" data-filter="Super Premium">Super Premium</button>
+          <button class="filter-btn" data-filter="Premium">Premium</button>
+          <button class="filter-btn" data-filter="Golden">Golden</button>
+          <button class="filter-btn" data-filter="Classic">Classic</button>
+        </div>
+
+        <div class="grid" id="catalogGrid">
+          <article class="card" data-category="Super Premium" data-search="0812-8888-8888 super premium mudah diingat branding vip langka">
+            <div class="card-inner">
+              <div class="card-top">
+                <div>
+                  <div class="pill" style="font-size:12px; padding:6px 12px;">Super Premium</div>
+                  <h3>0812 69 01234</h3>
+                  <p class="desc">Mudah diingat, cocok untuk brand besar dan citra eksklusif.</p>
+                </div>
+                <div class="icon-box">★</div>
+              </div>
+              <div class="meta">
+                <div class="meta-tag">VIP</div><div class="meta-tag">Langka</div><div class="meta-tag">Branding</div>
+              </div>
+              <div class="card-bottom">
+                <div>
+                  <p class="p">Harga</p>
+                  <div class="pr">Rp 19.000.000</div>
+                </div>
+                <a class="btn btn-primary" href="https://wa.me/6283867787878?text=Halo%20admin,%20saya%20tertarik%20dengan%20Nomor%200812 69 01234%20harga%20Rp%2019.000.000.%20Masih%20tersedia?" target="_blank" rel="noopener">Chat Sekarang</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-category="Premium" data-search="0812-1234-5678 premium rapi populer mudah dibaca">
+            <div class="card-inner">
+              <div class="card-top">
+                <div>
+                  <div class="pill" style="font-size:12px; padding:6px 12px;">Premium</div>
+                  <h3>082 123 345 567</h3>
+                  <p class="desc">Susunan rapi dan enak dibaca, cocok untuk tampil profesional.</p>
+                </div>
+                <div class="icon-box">✦</div>
+              </div>
+              <div class="meta">
+                <div class="meta-tag">Rapi</div><div class="meta-tag">Populer</div><div class="meta-tag">Profesional</div>
+              </div>
+              <div class="card-bottom">
+                <div>
+                  <p class="p">Harga</p>
+                  <div class="pr">Rp 15.000.000</div>
+                </div>
+                <a class="btn btn-primary" href="https://wa.me/6283867787878?text=Halo%20admin,%20saya%20tertarik%20dengan%20Nomor%20082 123 345 567%20harga%20Rp%2015.000.000.%20Masih%20tersedia?" target="_blank" rel="noopener">Chat Sekarang</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-category="Golden" data-search="0813-7777-1111 golden unik eksklusif pola">
+            <div class="card-inner">
+              <div class="card-top">
+                <div>
+                  <div class="pill" style="font-size:12px; padding:6px 12px;">Golden</div>
+                  <h3>0878 5759 5758</h3>
+                  <p class="desc">Pola unik untuk membangun kesan eksklusif dan berbeda.</p>
+                </div>
+                <div class="icon-box">✦</div>
+              </div>
+              <div class="meta">
+                <div class="meta-tag">Unik</div><div class="meta-tag">Eksklusif</div><div class="meta-tag">Premium look</div>
+              </div>
+              <div class="card-bottom">
+                <div>
+                  <p class="p">Harga</p>
+                  <div class="pr">Rp 7.000.000</div>
+                </div>
+                <a class="btn btn-primary" href="https://wa.me/6283867787878?text=Halo%20admin,%20saya%20tertarik%20dengan%20Nomor%200878 5759 5758%20harga%20Rp%207.000.000.%20Masih%20tersedia?" target="_blank" rel="noopener">Chat Sekarang</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-category="Classic" data-search="0857-9999-0000 classic murah cepat laku personal bisnis kecil">
+            <div class="card-inner">
+              <div class="card-top">
+                <div>
+                  <div class="pill" style="font-size:12px; padding:6px 12px;">Classic</div>
+                  <h3>08954 0102 0304</h3>
+                  <p class="desc">Cocok untuk personal atau bisnis kecil yang ingin tampil menarik.</p>
+                </div>
+                <div class="icon-box">☎</div>
+              </div>
+              <div class="meta">
+                <div class="meta-tag">Murah</div><div class="meta-tag">Cepat laku</div><div class="meta-tag">Simple</div>
+              </div>
+              <div class="card-bottom">
+                <div>
+                  <p class="p">Harga</p>
+                  <div class="pr">Rp 3.500.000</div>
+                </div>
+                <a class="btn btn-primary" href="https://wa.me/6283867787878?text=Halo%20admin,%20saya%20tertarik%20dengan%20Nomor%2008954 0102 0304%20harga%20Rp%203.500.000.%20Masih%20tersedia?" target="_blank" rel="noopener">Chat Sekarang</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-category="Premium" data-search="0821-2345-1234 premium simetris bagus mudah diingat">
+            <div class="card-inner">
+              <div class="card-top">
+                <div>
+                  <div class="pill" style="font-size:12px; padding:6px 12px;">Premium</div>
+                  <h3>0851 6263 6465</h3>
+                  <p class="desc">Simetris, enak dilihat, dan cocok untuk brand yang ingin tampil rapi.</p>
+                </div>
+                <div class="icon-box">★</div>
+              </div>
+              <div class="meta">
+                <div class="meta-tag">Simetris</div><div class="meta-tag">Bagus</div><div class="meta-tag">Elegant</div>
+              </div>
+              <div class="card-bottom">
+                <div>
+                  <p class="p">Harga</p>
+                  <div class="pr">Rp 6.000.000</div>
+                </div>
+                <a class="btn btn-primary" href="https://wa.me/6283867787878?text=Halo%20admin,%20saya%20tertarik%20dengan%20Nomor%200851 6263 6465%20harga%20Rp%206.000.000.%20Masih%20tersedia?" target="_blank" rel="noopener">Chat Sekarang</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-category="Golden" data-search="0896-1111-2222 golden keren siappakai reseller toko">
+            <div class="card-inner">
+              <div class="card-top">
+                <div>
+                  <div class="pill" style="font-size:12px; padding:6px 12px;">Golden</div>
+                  <h3>0851 7172 7374</h3>
+                  <p class="desc">Tampilan keren untuk toko, reseller, atau keperluan branding lainnya.</p>
+                </div>
+                <div class="icon-box">✦</div>
+              </div>
+              <div class="meta">
+                <div class="meta-tag">Keren</div><div class="meta-tag">Siap pakai</div><div class="meta-tag">Branding</div>
+              </div>
+              <div class="card-bottom">
+                <div>
+                  <p class="p">Harga</p>
+                  <div class="pr">Rp 7.000.000</div>
+                </div>
+                <a class="btn btn-primary" href="https://wa.me/6283867787878?text=Halo%20admin,%20saya%20tertarik%20dengan%20Nomor%200851 7172 7374%20harga%20Rp%207.000.000.%20Masih%20tersedia?" target="_blank" rel="noopener">Chat Sekarang</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="keunggulan">
+      <div class="container keunggulan-wrapper">
+        
+        <div class="panel">
+          <p style="text-transform:uppercase;letter-spacing:.18em;font-size:12px;color:#fbff00;margin:0;">Kenapa pilih desain ini</p>
+          <h3 style="margin-top:10px;">Dirancang dengan tampilan rapi dan modern untuk mendorong penjualan secara efektif.</h3>
+          <p>
+            Semua ini dirancang untuk memberikan pengalaman yang sederhana, cepat, dan langsung mengarah ke proses pembelian.
+          </p>
+          <div class="benefit-list">
+            <div class="benefit">Tampilan modern dan elegan</div>
+            <div class="benefit">Cocok untuk katalog WhatsApp atau toko online</div>
+            <div class="benefit">Bisa dipakai di hosting biasa</div>
+            <div class="benefit">Mudah diubah sesuai brand kamu</div>
+          </div>
+        </div>
+
+        <div class="testi-faq-grid">
+          
+          <div class="panel" id="testimoni">
+            <p style="text-transform:uppercase;letter-spacing:.18em;font-size:12px;color:#00ff55;margin:0;">Testimoni</p>
+            <h3 style="margin-top:10px;">Apa kata pelanggan kami</h3>
+
+            <div class="testimonial" style="margin-top:18px;">
+              <div class="testimonial-card">
+                <div class="user">
+                  <div class="avatar">A</div>
+                  <div class="info">
+                    <div class="name">andrie_vixie92</div>
+                    <div class="stars">★★★★★</div>
+                  </div>
+                </div>
+                <div class="quote">“Terimakasih omkuh, no ya udh aman udah aktiff berkah selaluu”</div>
+                <div class="meta-info">Pembeli • 2025-11-12 20:40</div>
+              </div>
+
+              <div class="testimonial-card">
+                <div class="user">
+                  <div class="avatar">R</div>
+                  <div class="info">
+                    <div class="name">rizkystwan</div>
+                    <div class="stars">★★★★★</div>
+                  </div>
+                </div>
+                <div class="quote">“order ke 2 kalinya, ke aceh, bisa request nomer juga 🤩🤩🤩”</div>
+                <div class="meta-info">Verified Buyer • 2025-05-16 18:21</div>
+              </div>
+
+              <div class="testimonial-card">
+                <div class="user">
+                  <div class="avatar">I</div>
+                  <div class="info">
+                    <div class="name">indriana_2019</div>
+                    <div class="stars">★★★★★</div>
+                  </div>
+                </div>
+                <div class="quote">“Kemasan rapi, dan paket cpt sampai. mksh”</div>
+                <div class="meta-info">Pembeli • 2022-10-19 13:39</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="right-stack">
+            <div class="faq-container">
+              <h3>Pertanyaan umum</h3>
+
+              <div class="faq-item">
+                <button class="faq-question">Bisa request nomor?</button>
+                <div class="faq-answer" data-text="Bisa, semua proses dilakukan manual sesuai permintaan."></div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">Proses lama?</button>
+                <div class="faq-answer" data-text="Rata-rata di bawah 5 menit tergantung antrian."></div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">Aman digunakan?</button>
+                <div class="faq-answer" data-text="Aman, diproses manual dengan verifikasi sistem untuk menjaga keamanan."></div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">Apakah bisa refund?</button>
+                <div class="faq-answer" data-text="Tidak ada refund jika pesanan sudah diproses."></div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">Bisa custom permintaan?</button>
+                <div class="faq-answer" data-text="Bisa, selama masih dalam batas layanan yang tersedia."></div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">Apakah butuh login?</button>
+                <div class="faq-answer" data-text="Tidak wajib login, tapi disarankan untuk tracking pesanan."></div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">Jam operasional?</button>
+                <div class="faq-answer" data-text="Layanan aktif setiap hari, respon tergantung jam sibuk."></div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">Bagaimana kalau error?</button>
+                <div class="faq-answer" data-text="Silakan refresh halaman atau hubungi support jika masih bermasalah."></div>
+              </div>
+            </div>
+
+            <div class="actions actions-right">
+              <a class="btn btn-primary" href="https://wa.me/6283867787878" target="_blank" rel="noopener">Hubungi Admin</a>
+              <a class="btn btn-secondary" href="#katalog">Lihat Lagi</a>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <div class="brand">BOS JOGJA</div>
+        <div class="desc">Premium number store — simple, fast, reliable.</div>
+      </div>
+      <div class="footer-right">
+        <div>© 2026 All rights reserved</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll(".faq-question").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const item = btn.parentElement;
+        const answer = item.querySelector(".faq-answer");
+        const text = answer.getAttribute("data-text");
+
+        item.classList.toggle("active");
+
+        if (item.classList.contains("active")) {
+          answer.innerHTML = "";
+          answer.style.maxHeight = "200px";
+
+          let i = 0;
+          function type() {
+            if (i < text.length) {
+              answer.innerHTML += text.charAt(i);
+              i++;
+              setTimeout(type, 25);
+            }
+          }
+
+          type();
+        } else {
+          answer.innerHTML = "";
+          answer.style.maxHeight = "0";
+        }
+      });
+    });
+
+    const searchInput = document.getElementById('searchInput');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('#catalogGrid .card');
+    let activeFilter = 'Semua';
+
+    function applyFilters() {
+      const q = searchInput.value.trim().toLowerCase();
+      cards.forEach(card => {
+        const category = card.dataset.category;
+        const searchable = card.dataset.search.toLowerCase();
+        const matchQuery = !q || searchable.includes(q);
+        const matchFilter = activeFilter === 'Semua' || category === activeFilter;
+        card.classList.toggle('hidden', !(matchQuery && matchFilter));
+      });
+    }
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeFilter = btn.dataset.filter;
+        applyFilters();
+      });
+    });
+
+    searchInput.addEventListener('input', applyFilters);
+  </script>
+</body>
+</html>
