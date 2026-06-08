@@ -45,7 +45,7 @@ Masukan, saran, dan kontribusi sangat diapresiasi untuk membantu meningkatkan ku
 
 ## 📄 Lisensi
 
-Hak Cipta © 2026 Koresh. Seluruh hak dilindungi.
+Hak Cipta © 2026 BOS JOGJA. Seluruh hak dilindungi.
 
 Proyek ini tidak bersifat open source. Penggunaan, penyalinan, modifikasi, distribusi, atau publikasi ulang tanpa izin tertulis dari pemilik tidak diperbolehkan.
 
