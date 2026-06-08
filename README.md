@@ -45,8 +45,11 @@ Masukan, saran, dan kontribusi sangat diapresiasi untuk membantu meningkatkan ku
 
 ## 📄 Lisensi
 
-Proyek ini dapat digunakan untuk keperluan pembelajaran, pengembangan, maupun modifikasi sesuai kebutuhan masing-masing pengguna.
+Hak Cipta © 2026 Koresh. Seluruh hak dilindungi.
 
+Proyek ini tidak bersifat open source. Penggunaan, penyalinan, modifikasi, distribusi, atau publikasi ulang tanpa izin tertulis dari pemilik tidak diperbolehkan.
+
+Lihat file `LICENSE` untuk informasi lebih lanjut.
 ---
 
 Dibuat dengan ❤️ menggunakan HTML, CSS, dan JavaScript.
